@@ -1,0 +1,21 @@
+{
+  "short_name": "SoulSync",
+  "name": "SoulSync - Your Digital Companion",
+  "description": "A secure, AI-powered journaling app with mood tracking and adaptive themes",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4A90E2",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["lifestyle", "productivity", "health"],
+  "lang": "en",
+  "dir": "ltr"
+}
+
