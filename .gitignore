@@ -47,3 +47,6 @@ Thumbs.db
 # Temporary folders
 tmp/
 temp/
+
+# Ignore Frontend in backend-only repo
+Frontend/
