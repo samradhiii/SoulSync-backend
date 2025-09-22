@@ -33,9 +33,12 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP, please try again later.',
   keyGenerator: (req) => req.ip,
   skip: (req) => {
-    const path = req.path || '';
-    // Skip limiting for auth routes and health checks
-    return path.startsWith('/api/auth') || path === '/api/health';
+    // Use originalUrl because this limiter is mounted at "/api/" and req.path omits the mount path
+    const original = req.originalUrl || req.url || '';
+    // Always skip preflight to avoid blocking CORS
+    if (req.method === 'OPTIONS') return true;
+    // Skip limiting for auth routes and health checks regardless of mount
+    return original.startsWith('/api/auth') || original === '/api/health';
   }
 });
 app.use('/api/', limiter);
